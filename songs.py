@@ -99,7 +99,7 @@ class MusicPlayer:
         self.next = asyncio.Event()
 
         self.np = None  # Now playing message
-        self.volume = .5 # test
+        self.volume = .5 # test 123
         self.current = None
 
         ctx.bot.loop.create_task(self.player_loop())

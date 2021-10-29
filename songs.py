@@ -1,3 +1,4 @@
+from math import log
 import discord
 from discord.utils import get
 import youtube_dl
@@ -112,10 +113,11 @@ class MusicPlayer:
 
             try:
                 # Wait for the next song. If we timeout cancel the player and disconnect...
-                async with timeout(300):  # 5 minutes...
+                async with timeout(60):  # 5 minutes...
                     source = await self.queue.get()
             except asyncio.TimeoutError:
-                del players[self._guild]
+                print(f"self._guild {self._guild}")
+                # del players[self._guild]
                 return await self.destroy(self._guild)
 
             if not isinstance(source, YTDLSource):

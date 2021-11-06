@@ -95,7 +95,7 @@ async def checkRQM(ctx):
     if str(ctx.channel) != rqmChannel:
         await ctx.channel.send("This channel can't request songs, please type in request-music.")
         return False
-    else :
+    else : 
         return True
 
 bot.run(token)

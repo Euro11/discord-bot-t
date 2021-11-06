@@ -12,7 +12,7 @@ token = os.getenv('TOKEN')
 songsInstance = songAPI()
 bot = commands.Bot(command_prefix='!',help_command=None)
 message_lastseen = datetime.now()
-rqmChannel = "request-music"
+rqmChannel = "🎵-request-music"
 
 @bot.event
 async def on_ready():
@@ -91,6 +91,7 @@ async def skip(ctx):
         await songsInstance.skip(ctx)
     
 async def checkRQM(ctx):
+    print(f"${str(ctx.channel)}  ${rqmChannel}")
     if str(ctx.channel) != rqmChannel:
         await ctx.channel.send("This channel can't request songs, please type in request-music.")
         return False
